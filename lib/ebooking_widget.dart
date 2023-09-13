@@ -1,6 +1,7 @@
-import 'package:e_booking_v1/screen_login.dart';
-import 'package:e_booking_v1/screen_home.dart';
-import 'package:e_booking_v1/screen_services.dart';
+import 'package:enlacebooking/screen_login.dart';
+import 'package:enlacebooking/screen_home.dart';
+import 'package:enlacebooking/screen_services.dart';
+import 'package:enlacebooking/screen_login.dart';
 
 import 'package:flutter/material.dart';
 
@@ -39,19 +40,14 @@ class _EBookingWidget extends State<EBookingWidget> {
 
   @override
   Widget build(context) {
-    Widget screenWidget = StartScreen(onSwitchToHome: switchScreenToHome);
+    Widget screenWidget = const RegistrationForm();
 
     if (activeScreen == 'screen-start') {
-      screenWidget = StartScreen(
-        onSwitchToHome: switchScreenToHome,
-      );
+      screenWidget = const RegistrationForm();
     }
 
     if (activeScreen == 'screen-home') {
-      screenWidget = HomeScreen(
-        onSwitchToStart: switchScreenToStart,
-        onSwitchToServices: switchScreenToServ,
-      );
+      screenWidget = HomeScreen();
     }
 
     if (activeScreen == 'screen-services') {

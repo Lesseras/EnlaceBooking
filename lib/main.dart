@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:e_booking_v1/ebooking_widget.dart';
+import 'package:enlacebooking/ebooking_widget.dart';
 
 var kColorScheme =
     ColorScheme.fromSeed(seedColor: Color.fromARGB(221, 147, 12, 12));

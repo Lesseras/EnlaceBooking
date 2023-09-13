@@ -1,14 +1,9 @@
+import 'package:enlacebooking/screen_login.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class HomeScreen extends StatelessWidget {
-  const HomeScreen(
-      {super.key,
-      required this.onSwitchToStart,
-      required this.onSwitchToServices});
-
-  final void Function() onSwitchToStart;
-  final void Function() onSwitchToServices;
+  const HomeScreen({super.key});
 
   get onServSwitchScreen => key;
 
@@ -53,14 +48,19 @@ class HomeScreen extends StatelessWidget {
               },
             ),
             ListTile(
-              title: const Text('Log out'),
-              subtitle:
-                  const Text('Regresarás al la pantalla de inicio de sesión'),
-              isThreeLine: true,
-              titleTextStyle:
-                  const TextStyle(color: Color.fromARGB(255, 57, 114, 161)),
-              onTap: onSwitchToStart,
-            ),
+                title: const Text('Log out'),
+                subtitle:
+                    const Text('Regresarás al la pantalla de inicio de sesión'),
+                isThreeLine: true,
+                titleTextStyle:
+                    const TextStyle(color: Color.fromARGB(255, 57, 114, 161)),
+                onTap: () {
+                  Navigator.of(context).pushReplacement(
+                      // Use pushReplacement to replace the current screen
+                      MaterialPageRoute(
+                    builder: (context) => const RegistrationForm(),
+                  ));
+                }),
           ],
         ),
       ),
@@ -88,14 +88,14 @@ class HomeScreen extends StatelessWidget {
             ),
           ),
           IconButton(
-            onPressed: onSwitchToStart,
+            onPressed: () {},
             icon: const Icon(
               Icons.airplanemode_on,
               color: Colors.white,
             ),
           ),
           IconButton(
-            onPressed: onSwitchToServices,
+            onPressed: () {},
             icon: const Icon(
               Icons.art_track,
               color: Colors.white,
